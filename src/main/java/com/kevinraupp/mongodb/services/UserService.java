@@ -1,6 +1,7 @@
 package com.kevinraupp.mongodb.services;
 
 import com.kevinraupp.mongodb.domain.User;
+import com.kevinraupp.mongodb.dto.UserDTO;
 import com.kevinraupp.mongodb.repository.UserRepository;
 import com.kevinraupp.mongodb.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class UserService {
     public User findByID(String id){
         Optional<User> user = userRepository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Id not found"));
-
+    }
+    public User insert(User user){
+        return userRepository.insert(user);
+    }
+    public User fromDTO(UserDTO userDTO){
+        return new User(userDTO.getName(),userDTO.getEmail());
     }
 }
