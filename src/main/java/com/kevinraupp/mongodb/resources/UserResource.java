@@ -1,5 +1,6 @@
 package com.kevinraupp.mongodb.resources;
 
+import com.kevinraupp.mongodb.domain.Post;
 import com.kevinraupp.mongodb.domain.User;
 import com.kevinraupp.mongodb.dto.UserDTO;
 import com.kevinraupp.mongodb.services.UserService;
@@ -48,4 +49,11 @@ public class UserResource {
         user = userService.update(user);
         return ResponseEntity.noContent().build();
     }
+
+    @RequestMapping(value = "/{id}/posts",method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findPost(@PathVariable String id){
+        User user = userService.findByID(id);
+        return ResponseEntity.ok().body(user.getPosts());
+    }
+
 }

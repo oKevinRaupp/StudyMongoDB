@@ -33,5 +33,9 @@ public class Instantiation implements CommandLineRunner {
                 "and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",new AuthorDTO(user01));
         Post post02 = new Post(sdf.parse("06/04/2023"),"TITULO!","Lorem Ipsum is simply dummy text of the printing and typesetting industry.",new AuthorDTO(user02));
         postRepository.saveAll(Arrays.asList(post01,post02));
+
+        user01.getPosts().addAll(Arrays.asList(post01,post02));
+        userRepository.save(user01);
+
     }
 }
