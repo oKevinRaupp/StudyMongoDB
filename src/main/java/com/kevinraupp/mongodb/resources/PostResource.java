@@ -3,6 +3,7 @@ package com.kevinraupp.mongodb.resources;
 import com.kevinraupp.mongodb.domain.Post;
 import com.kevinraupp.mongodb.domain.User;
 import com.kevinraupp.mongodb.dto.UserDTO;
+import com.kevinraupp.mongodb.resources.util.URL;
 import com.kevinraupp.mongodb.services.PostService;
 import com.kevinraupp.mongodb.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,14 @@ public class PostResource {
     public ResponseEntity<Post> findById(@PathVariable String id){
         Post post = postService.findByID(id);
         return ResponseEntity.ok().body(post);
+    }
+
+    @RequestMapping(value = "/title/contains",method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findByTitle(@RequestParam(value = "title",defaultValue = "") String text){
+        text = URL.decodeParam(text);
+
+        List<Post> list = postService.findByTitle(text);
+        return ResponseEntity.ok().body(list);
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
