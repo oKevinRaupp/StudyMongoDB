@@ -32,11 +32,18 @@ public class PostResource {
         return ResponseEntity.ok().body(post);
     }
 
-    @RequestMapping(value = "/title/contains",method = RequestMethod.GET)
+    @RequestMapping(value = "/contains/title",method = RequestMethod.GET)
     public ResponseEntity<List<Post>> findByTitle(@RequestParam(value = "title",defaultValue = "") String text){
         text = URL.decodeParam(text);
 
         List<Post> list = postService.findByTitle(text);
+        return ResponseEntity.ok().body(list);
+    }
+    @RequestMapping(value = "/contains/body",method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> FindByAuthor(@RequestParam(value = "body",defaultValue = "") String text){
+        text = URL.decodeParam(text);
+
+        List<Post> list = postService.findByBody(text);
         return ResponseEntity.ok().body(list);
     }
 
