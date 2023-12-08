@@ -12,7 +12,7 @@ http://localhost:8080/users
 user by id:
 http://localhost:8080/users/{id}
 
-get user post:
+get user's post:
 http://localhost:8080/users/{id}/posts
 
 # Post User:
