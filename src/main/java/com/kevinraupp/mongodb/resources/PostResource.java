@@ -41,10 +41,26 @@ public class PostResource {
         return ResponseEntity.ok().body(list);
     }
     @RequestMapping(value = "/contains/body",method = RequestMethod.GET)
-    public ResponseEntity<List<Post>> FindByAuthor(@RequestParam(value = "body",defaultValue = "") String text){
+    public ResponseEntity<List<Post>> FindByBody(@RequestParam(value = "body",defaultValue = "") String text){
         text = URL.decodeParam(text);
 
         List<Post> list = postService.findByBody(text);
+        return ResponseEntity.ok().body(list);
+    }
+
+    @RequestMapping(value = "/contains/comment",method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findByComment(@RequestParam(value = "comment",defaultValue = "") String text){
+        text = URL.decodeParam(text);
+
+        List<Post> list = postService.findByComment(text);
+        return ResponseEntity.ok().body(list);
+    }
+
+    @RequestMapping(value = "/author",method = RequestMethod.GET)
+    public ResponseEntity<List<Post>> findByAuthor(@RequestParam(value = "author",defaultValue = "") String text){
+        text = URL.decodeParam(text);
+
+        List<Post> list = postService.findByAuthor(text);
         return ResponseEntity.ok().body(list);
     }
 

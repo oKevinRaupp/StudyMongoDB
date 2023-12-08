@@ -1,0 +1,48 @@
+Get Users:
+
+all users:
+http://localhost:8080/users
+
+user by id:
+http://localhost:8080/users/{id}
+
+get user post:
+http://localhost:8080/users/{id}/posts
+
+Post User:
+http://localhost:8080/users
+
+Put user:
+http://localhost:8080/users{id}
+Json -> 
+{
+ "name": "Teste",
+ "email": "teste@teste.com"
+} 
+
+
+Get Posts:
+
+all posts:
+http://localhost:8080/posts
+
+post by id:
+http://localhost:8080/posts/{id}
+
+full search:
+http://localhost:8080/posts/fullsearch?text=Kevin&mindate=2003-04-06&maxdate=2023-04-06
+
+body contains:
+http://localhost:8080/posts/contains/body?body=ola
+
+comment contains:
+http://localhost:8080/posts/contains/comment?comment=raupp
+
+title contains:
+http://localhost:8080/posts/contains/title?title=new
+
+author:
+http://localhost:8080/posts/author?author=test
+
+Delete Posts: 
+http://localhost:8080/posts/{id}
