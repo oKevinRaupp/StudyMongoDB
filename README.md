@@ -1,5 +1,8 @@
 # API com MongoDB, sistema de post e comentario.
 
+Projeto criado para estudo e trabalho com MongoDB e API REST
+
+<p align="left">
 # Get Users:
 
 all users:
@@ -33,6 +36,7 @@ http://localhost:8080/posts/{id}
 
 full search:
 http://localhost:8080/posts/fullsearch?text=Kevin&mindate=2003-04-06&maxdate=2023-04-06
+</p>
 
 body contains:
 http://localhost:8080/posts/contains/body?body=ola
