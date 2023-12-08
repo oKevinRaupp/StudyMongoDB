@@ -1,6 +1,6 @@
 # API com MongoDB, sistema de post e comentario.
 
-Projeto criado para estudo e trabalho com MongoDB e API REST
+Projeto criado para estudo e trabalho com MongoDB e API REST juntamente do framework SpringBoot!
 
 <p align="left">
  
