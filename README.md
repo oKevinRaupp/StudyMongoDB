@@ -1,55 +1,48 @@
 # API com MongoDB, sistema de post e comentario.
 
-Projeto criado para estudo e trabalho com MongoDB e API REST juntamente do framework SpringBoot!
+Projeto criado para estudar o desenvolvimento de API'S com SpringBoot e MongoDB.
 
-<p align="left">
  
-# Get Users:
+# User:
 
-all users:
-http://localhost:8080/users
+<b>GET</b>
 
-user by id:
-http://localhost:8080/users/{id}
+/api/v1/users -> Finds all users
 
-get user's post:
-http://localhost:8080/users/{id}/posts
+/api/v1/users/{id} -> Finds a user by passing an {id}
 
-# Post User:
-http://localhost:8080/users
+/api/v1/users/{id}/posts -> Finds all user's posts
 
-# Put user:
-http://localhost:8080/users{id}
-Json -> 
-{
- "name": "Teste",
- "email": "teste@teste.com"
-} 
+<b>POST</b>
 
+/api/v1/users -> Adds a new user by passing a RequestBody in JSON, XML or YML!
 
-# Get Posts:
+<b>PUT</b>
 
-all posts:
-http://localhost:8080/posts
+/api/v1/users/{id} -> Updates a user by passing an {id} and a RequestBody in JSON, XML or YML!
 
-post by id:
-http://localhost:8080/posts/{id}
+<b>DELETE</b>
 
-full search:
-http://localhost:8080/posts/fullsearch?text=Kevin&mindate=2003-04-06&maxdate=2023-04-06
-</p>
+/api/v1/users/{id} -> Deletes a user by passing an {id}
 
-body contains:
-http://localhost:8080/posts/contains/body?body=ola
+# Post:
 
-comment contains:
-http://localhost:8080/posts/contains/comment?comment=raupp
+<b>GET</b>
 
-title contains:
-http://localhost:8080/posts/contains/title?title=new
+/api/v1/posts -> Finds all posts
 
-author contains:
-http://localhost:8080/posts/author?author=test
+/api/v1/posts/{id} -> Finds a posts by passing an {id}
 
-# Delete Posts: 
-http://localhost:8080/posts/{id}
+/api/v1/posts/fullsearch -> Finds a post that has what you're looking for by passing an RequestParam
+
+/api/v1/posts/contains/title -> Finds a posts by passing an RequestParam to title
+
+/api/v1/posts/contains/comment -> Finds a posts by passing an RequestParam to comment
+
+/api/v1/posts/contains/body -> Finds a posts by passing an RequestParam to body
+
+/api/v1/posts/author -> Finds a posts by passing an RequestParam to author
+
+<b>DELETE</b>
+
+/api/v1/posts/{id} -> Deletes a post by passing an {id}
