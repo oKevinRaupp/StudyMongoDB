@@ -55,7 +55,7 @@ public class UserResource {
 
     @RequestMapping(method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML},
             consumes = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML})
-    @Operation(summary = "Adds a new user", description = "Adds a new user by passing in a JSON, XML or YML!", tags = {"User"},
+    @Operation(summary = "Adds a new user", description = "Adds a new user by passing a RequestBody in JSON, XML or YML!!", tags = {"User"},
             responses = {@ApiResponse(description = "Success", responseCode = "200", content = @Content(schema = @Schema(implementation = UserDTO.class))),
                     @ApiResponse(description = "No content", responseCode = "204", content = @Content),
                     @ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
