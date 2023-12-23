@@ -125,7 +125,7 @@ public class PostResource {
         return ResponseEntity.ok().body(list);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}", produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_YML})
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     @Operation(summary = "Deletes a post", description = "Deletes a post by passing an {id}", tags = {"Post"},
             responses = {@ApiResponse(description = "No content", responseCode = "204", content = @Content(schema = @Schema(implementation = Post.class))),
                     @ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
